@@ -1,0 +1,2 @@
+let parag = `asd\tkldaskj\nkasasjl`;
+console.log(parag);
