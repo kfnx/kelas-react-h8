@@ -3,20 +3,26 @@ class Action {
     this._name = name
   }
   lompat() {
-    return "LOMPAT!";
+    return this._name+ " LOMPAT!";
   }
-  lompatSejauh(){
-    return "LOMPAT SEJAUH "+ this._name+ " m";
-  }
-}
-
-class Hard extends Action{
-  lompatLebihJauh(){
-    let jarak = this._name+10
-    return "LOMPAT LEBIH JAUH "+jarak+ " m"
+  lompatSejauh(jarak = 0){
+    return this._name+ " LOMPAT SEJAUH "+ jarak+ " m";
   }
 }
 
-let scott = new Hard(500);
-console.log(scott.lompatSejauh());
-console.log(scott.lompatLebihJauh());
+class moreAction extends Action{
+  constructor(nama, more = 500){
+    super(nama)
+    this._more = more
+  }
+  lompatLebihJauh(jarak = 0){
+    let jarak_baru = jarak+this._more
+    return this._name+ " LOMPAT SEJAUH "+ jarak_baru + " m";
+  }
+}
+
+// let jojo = new moreAction("jojo");
+// console.log(jojo.lompatLebihJauh(35));
+// console.log(scott.lompatLebihJauh());
+
+// export default Hard
